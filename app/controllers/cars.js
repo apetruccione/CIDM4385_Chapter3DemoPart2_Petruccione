@@ -29,8 +29,10 @@ $.mainWindow.addEventListener("close", function()
 $.table.addEventListener('click', function(_event){
 	
 	// This gets the row data for the row that was clicked on? I think.
-	var model = Alloy.Collections.cars.get(_event.rowData.modelId);
-	alert(model);
+	var model = Alloy.Collections.cars.getByCid(_event.rowData.modelId);
+	//var model = Alloy.Collections.cars.get(_event.rowData.modelId);
+	//var model = Alloy.Collections.cars.get(e.rowData.modelId);
+	//alert(e.rowData);
 	//create a new detail controller.
 	var detailController = Alloy.createController("detail",
 	{
